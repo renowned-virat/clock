@@ -1,0 +1,47 @@
+
+   
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="myStyle.css">
+    <title>Clock</title>
+    <title>Clock</title>
+    
+</head>
+<body class="clock-body">
+    <div class="clock-box">
+        <div class="time">
+            <script>
+                var dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                let a
+                let time
+                let date
+                let day
+                setInterval(() => {
+                    a = new Date()
+                    date = a.toLocaleDateString()
+                    let b= a.getHours();
+                    let c= a.getMinutes();
+                    let d=a.getSeconds();
+                    day=dayNames[a.getDay()]
+                    time = a.getHours() + ":" + a.getMinutes() + ":" + a.getSeconds()
+                    document.getElementById('time').innerHTML = time + "<br>Date: " + date+"<br>Day:"+day
+                    // document.getElementById('day').innerHTML = day;
+                
+                }, 1000);
+       
+        
+            </script>
+        </div>
+    <div class="container">
+
+        <div class="jumbotron">
+            <h1 class="display-4">Time: <span id="time"></span> </h1>
+        </div>
+    </div>
+    <div id="day"></div>
+</body>
+</html>
